@@ -9,9 +9,9 @@
 
 [![License: GPL-3.0](https://img.shields.io/badge/license-GPL3.0-blue.svg)](LICENSE.md)
 
-A suppliment to the Academic Profile website. It was designed to run smoothly & easily to facilitate
+A supplement to the Academic Profile website. It was designed to run smoothly & easily to facilitate
 e-learning, which has become an essential system in education. This app comes with the most services that
-the stident needs during his study period, Looking forward on adding new services that is in the interest of the student in particular.
+the student needs during his study period, Looking forward on adding new services that is in the interest of the student in particular.
 
 ## Screenshots
 
