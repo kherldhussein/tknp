@@ -21,20 +21,20 @@ The Data shown is not correct and just there for demonstration purposes.
 
 <p float="left">
 <img src="screenshots/courses_dark.png" width="200px" />
-<img src="readme/settings_dark.png" width="200px" />
-<img src="readme/drawer_dark.png" width="200px" />
-<img src="readme/signIn1_dark.png" width="200px" />
-<img src="readme/about_dark.png" width="200px" />
+<img src="screenshots/settings_dark.png" width="200px" />
+<img src="screenshots/drawer_dark.png" width="200px" />
+<img src="screenshots/signIn1_dark.png" width="200px" />
+<img src="screenshots/about_dark.png" width="200px" />
 </p>
 
 ### Light mode
 
 <p float="left">
-<img src="readme/courses_light.png" width="200px" />
-<img src="readme/settings_light.png" width="200px" />
-<img src="readme/drawer_light.png" width="200px" />
-<img src="readme/signIn1_light.png" width="200px" />
-<img src="readme/about_light.png" width="200px" />
+<img src="screenshots/courses_light.png" width="200px" />
+<img src="screenshots/settings_light.png" width="200px" />
+<img src="screenshots/drawer_light.png" width="200px" />
+<img src="screenshots/signIn1_light.png" width="200px" />
+<img src="screenshots/about_light.png" width="200px" />
 </p>
 
 #### Please see the changelog file for recent improvements and the issue tracker for short-term plans.
