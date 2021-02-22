@@ -30,26 +30,27 @@ dependencies:
   cupertino_icons: ^1.0.2
   # animated_theme_switcher: ^1.0.6
   # cached_network_image: null
-  # carousel_pro: any
+  carousel_pro: ^1.0.0
   # cupertino_stackview: ^1.0.4
-  # data_connection_checker: ^0.3.4
+  data_connection_checker: ^0.3.4
   # flutter_plugin_pdf_viewer: any
-  # font_awesome_flutter: ^8.7.0
+  font_awesome_flutter: ^9.0.0-nullsafety
   # get_it:
   # google_sign_in: ^4.0.7
   http: any
   # intro_views_flutter: ^2.8.0
   # modal_progress_hud: ^0.1.3
   # palette_generator: ^0.2.0
-  provider: 
-  share: ^0.6.3+1
+  provider: ^5.0.0-nullsafety.5
+  share: ^2.0.0-nullsafety.2
   # transformer_page_view: ^0.1.6
-  # url_launcher: ^5.2.5
-  webview_flutter: ^0.3.15+1
-  # wiredash: 
+  url_launcher: ^6.0.0-nullsafety.7
+  webview_flutter: ^2.0.0-nullsafety.5
+  animations: ^2.0.0-nullsafety.0
+#  wiredash: ^0.3.0
   # launch_review: ^2.0.0
   # path_provider: null
-  # shared_preferences: any
+  shared_preferences: ^2.0.0-nullsafety.1
   # flutter_pdfview: ^1.0.0+6
   # image_picker: any
   # dio: any
@@ -73,7 +74,7 @@ dependencies:
   # auto_route: null
   # rxdart: null
   # stacked_services: null
-  get: null
+  get: ^3.25.4
   # avatar_glow: ^1.1.0
   # simple_url_preview: null
   # lottie: ^0.6.0
@@ -82,7 +83,6 @@ dependencies:
   # retry: ^3.0.1
   # preload_page_view: ^0.1.4
   # in_app_review:
-#  animations: ^1.1.2
 #  youtube_player_flutter: ^7.0.0+7
 
 dev_dependencies:
