@@ -67,7 +67,7 @@ Google Flutter SDK
 ## Installation
 Since this is an unofficial App it unfortunately cannot be released in the App Store or Google Play.<br>
 To use this Application on Android phones you can download the latest prebuilt apk.
-* [Download It Here](https://github.com/kherld-hussein/tknp/releases/download/v0.1-alpha/app-release.apk)
+* [Download It Here](https://github.com/kherld-hussein/tknp/releases/tag/)
 
 ## Currently implemented features:
 * TKNP login
