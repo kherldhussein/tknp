@@ -9,9 +9,9 @@
 
 [![License: GPL-3.0](https://img.shields.io/badge/license-GPL3.0-blue.svg)](LICENSE.md)
 
-A supplement to the Academic Profile website. It was designed to run smoothly & easily to facilitate
+The TKNP app provides convenient access to important information and personalized services in the palm of your hand. It was designed to run smoothly & easily to facilitate
 e-learning, which has become an essential system in education. This app comes with the most services that
-the student needs during his study period, Looking forward on adding new services that is in the interest of the student in particular.
+the student needs during his study period. Looking forward on adding new services that is in the interest of the student in particular.
 
 ## Screenshots
 
@@ -44,7 +44,7 @@ The Data shown is not correct and just there for demonstration purposes.
 - Android
 - `Mac OS`
 - `Windows`
-- `Linux`
+
 
 ### Built With
 Google Flutter SDK
@@ -67,18 +67,19 @@ Google Flutter SDK
 ## Installation
 Since this is an unofficial App it unfortunately cannot be released in the App Store or Google Play.<br>
 To use this Application on Android phones you can download the latest prebuilt apk.
-* [Download It Here](https://github.com/kherld-hussein/tknp/releases)
+> Download The Offial App [Here](https://github.com/kherld-hussein/tknp/releases/)
 
 ## Currently implemented features:
-* TKNP login
-* Lectures
-* News
-* Portal access
-* Notification (mass)
+Kisumupoly students and not stuff can get:
+* Easy access to dynamic, real-time information and frequently accessed services
+* E-learning Resources
+* Smart Notes Widget
+* Latest notices and News
+* A seamless transition between web and mobile devices
 
 ## RoadMap & ToDo:
 | Chatting Platform for each department
-* Each student to able to chat from withing the specified departments and share ideas with other students.
+* Students can interact with each other and have an option to anonymously rant thus relieving possible anxiety, stress and nervousness.
 
 | Lecturer's Platform
 * Lecturers to interact with there student.
@@ -100,4 +101,3 @@ Kherld Hussein - [@kherld-hussein](https://twitter.com/kherld-hussein) - kherld1
 ## License
 
 [GPL-3.0 License](LICENSE.md)
-# tknp
