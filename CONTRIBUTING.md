@@ -56,6 +56,6 @@ if any, shown by `dart analyze` before making a pull request.
 ## Security
 
 Please do not publish security vulnerabilities publicly until we've had a chance to address them. 
-All security related issues/patches should be sent directly to [kherld11@gmail.com](mailto:kherld11@gmail.com?subject=TKNP App)
+All security related issues/patches should be sent directly to [kherld11@gmail.com](mailto:kherld11@gmail.com)
 where we will attempt to address them quickly.If you're not sure whether something is a security issue or not, 
 then please be cautious and contact us at [kherld11@gmail.com](mailto:kherld11@gmail.com) first.
