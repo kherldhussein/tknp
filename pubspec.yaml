@@ -74,7 +74,7 @@ dependencies:
   # auto_route: null
   # rxdart: null
   # stacked_services: null
-  get: ^3.25.4
+  get: ^4.1.4
   # avatar_glow: ^1.1.0
   # simple_url_preview: null
   # lottie: ^0.6.0
