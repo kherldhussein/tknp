@@ -47,6 +47,7 @@ dependencies:
   url_launcher: ^6.0.0-nullsafety.7
   webview_flutter: ^2.0.0-nullsafety.5
   animations: ^2.0.0-nullsafety.0
+  change_app_package_name: ^1.0.0
 #  wiredash: ^0.3.0
   # launch_review: ^2.0.0
   # path_provider: null

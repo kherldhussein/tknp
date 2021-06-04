@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.tknp">
+    package="com.kherldhussein.tknp">
    <application
         android:label="tknp"
         android:icon="@mipmap/ic_launcher">
