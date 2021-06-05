@@ -1,9 +1,13 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 import 'package:tknp/anim/animated.dart';
 import 'package:tknp/widgets/card_tiles/card_tiles.dart';
+import 'package:tknp/widgets/custom_app_bar.dart';
 import 'package:tknp/widgets/iso_widget.dart';
+import 'package:tknp/widgets/tknp_web.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 /*
  todo: implement:
@@ -21,8 +25,20 @@ class _AboutViewState extends State<AboutView> {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
-    final offTheme = Theme.of(context);
     return Scaffold(
+      appBar: CustomAppBar(
+        title: 'About',
+        actions: [
+          IconButton(
+              icon: FaIcon(FontAwesomeIcons.link),
+              onPressed: () {
+                Get.to(
+                  () => WebGeneration2(
+                      'https://portal.kisumupoly.ac.ke/about-us', ''),
+                );
+              })
+        ],
+      ),
       body: ListView(
           padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
           children: [
@@ -38,95 +54,133 @@ class _AboutViewState extends State<AboutView> {
                           children: [
                             Image.asset('assets/images/plogo.png'),
                             Text(
-                              'The Kisumu National \nPolytechnic',
-                              style: textTheme.headline6!.copyWith(fontSize: 17),
+                              'The Kisumu National \nPolytechnic\n\nIndustry Succeeds',
+                              style:
+                                  textTheme.headline6!.copyWith(fontSize: 17),
                             ),
                           ],
                         ),
                       ),
                     ),
-                    // Text('Industry Succeeds',style: textTheme.subtitle1,),
                   ],
                 ),
               ),
             ),
             SettingsSpacer(),
+            WidgetAnimator(
+              Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Text(
+                      'The Kisumu National Polytechnic boasts a Distinctive Serene Environment and Modern Facilities. \n'
+                      "Reputation for Quality Affordable Training Programmes,\n"
+                      "Commitment to Training/Learning, Research & Innovation\n"
+                      "Dedicated Spirit, Energy & Passion of Staff and LifeLong Education & Student Experiences.",
+                      style: textTheme.subtitle1),
+                ),
+              ),
+            ),
+            SettingsSpacer(),
             SettingsTitle(title: 'Address'),
-            Card(
-              child: Padding(
-                padding: const EdgeInsets.all(10),
-                child: Text(
-                  'Technology rd, Kisumu, Kenya',
-                  style: textTheme.subtitle1,
+            WidgetAnimator(
+              Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Row(
+                    children: [
+                      IconButton(
+                          splashRadius: 1,
+                          icon: Lottie.asset('assets/lottie/location.json'),
+                          onPressed: () {
+                            // Get.to(() => TKNPMAP())
+                          }),
+                      Text(
+                        'Technology rd, Kisumu, Kenya',
+                        style: textTheme.subtitle1,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
             SettingsSpacer(),
             SettingsTitle(title: 'Phone'),
-            Card(
-              child: Padding(
-                padding: const EdgeInsets.all(10),
-                child: Text('+ (254) 5725 01 501', style: textTheme.subtitle1),
+            WidgetAnimator(
+              Card(
+                child: InkWell(
+                  child: Padding(
+                    padding: const EdgeInsets.all(10),
+                    child:
+                        Text('+ (254) 5725 01 501', style: textTheme.subtitle1),
+                  ),
+                  onTap: () => launch('tel:+254572501501'),
+                ),
               ),
-              // onTap: () => launchURL('tel:+254572501501'),
             ),
             SettingsSpacer(),
             SettingsTitle(title: 'Mail'),
-            Card(
-              child: Padding(
-                padding: const EdgeInsets.all(10),
-                child:
-                    Text('info@kisumupoly.ac.ke', style: textTheme.subtitle1),
+            WidgetAnimator(
+              Card(
+                child: InkWell(
+                  child: Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: Text('info@kisumupoly.ac.ke',
+                        style: textTheme.subtitle1),
+                  ),
+                  onTap: () =>
+                      launch('mailto:info@kisumupoly.ac.ke?subject=TKNP App'),
+                ),
               ),
             ),
             SettingsSpacer(),
             SettingsTitle(title: 'Social'),
-            Card(
-              child: Column(
-                children: [
-                  ListTile(
-                    title: Text('Facebook'),
-                    leading: Icon(Icons.whatshot),
-                    // onTap: () => launchURL('https://facebook.com/kisumupoly/'),
-                  ),
-                  ListTile(
-                    title: Text('Twitter'),
-                    leading: Icon(Icons.whatshot),
-                  ),
-                  ListTile(
-                    title: Text('GooglePlus'),
-                    // subtitle: Text(
-                    //     "https://twitter.com/kisumu_poly?ref_src=twsrc%5Etfw"),
-                    leading: Icon(Icons.whatshot),
-                    // onTap: () => launchURL('https://twitter.com/kisumu_poly?ref_src=twsrc%5Etfw'),
-                  ),
-                ],
+            WidgetAnimator(
+              Card(
+                child: Column(
+                  children: [
+                    ListTile(
+                      title: Text('Facebook'),
+                      leading: FaIcon(FontAwesomeIcons.facebook),
+                      onTap: () => launch('https://facebook.com/kisumupoly/'),
+                    ),
+                    ListTile(
+                      title: Text('Twitter'),
+                      leading: FaIcon(FontAwesomeIcons.twitter),
+                      onTap: () => launch(
+                          'https://twitter.com/kisumu_poly?ref_src=twsrc%5Etfw'),
+                    ),
+                    ListTile(
+                      title: Text('GooglePlus'),
+                      leading: FaIcon(FontAwesomeIcons.googlePlus),
+                      onTap: () => launch(
+                          'https://twitter.com/kisumu_poly?ref_src=twsrc%5Etfw'),
+                    ),
+                  ],
+                ),
               ),
             ),
             SettingsSpacer(),
             SettingsTitle(title: 'Customer Desk'),
-            Card(
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(10),
-                    child: Text(
-                      'If you need technical assistance with the '
-                      'mobile app at any time, day or night, you call technical support team\n'
-                      '+ (254) 7922 81 871',style: textTheme.subtitle1,
+            WidgetAnimator(
+              Card(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Text(
+                        'If you need technical assistance with the '
+                        'mobile app at any time, day or night, you call technical support team',
+                        style: textTheme.subtitle1,
+                      ),
                     ),
-                  )
-                ],
-              ),
-            ),
-            SettingsSpacer(),
-            Card(
-              child: Padding(
-                padding: const EdgeInsets.all(10),
-                child: Text(
-                    "We are  happy to get your feedback into our consideration "
-                    "please leave your feedback ",style: textTheme.subtitle1,
-                    textAlign: TextAlign.center),
+                    ListTile(
+                      title: Text('+ (254) 7922 81 871',
+                          style: textTheme.subtitle1),
+                      onTap: () => launch('tel:+254792281871'),
+                    )
+                  ],
+                ),
               ),
             ),
             SizedBox(height: 10),
