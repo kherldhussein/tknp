@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "831284793257",
+    "firebase_url": "https://tknp-5b4a1.firebaseio.com",
+    "project_id": "tknp-5b4a1",
+    "storage_bucket": "tknp-5b4a1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:831284793257:android:215ae08f0a7808ac13feb8",
+        "android_client_info": {
+          "package_name": "com.kherldhussein.tknp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "831284793257-g2nki7n7vu0kj74id79al4mhhb36o5kr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDwBgCZKXAe0nlSXybniV8OK7K0aRQlZg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "831284793257-g2nki7n7vu0kj74id79al4mhhb36o5kr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
