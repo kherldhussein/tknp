@@ -5,7 +5,7 @@
 *** Thanks again! Now go create something AMAZING! :D
 -->
 
-# Unofficial TKNP App
+# TKNP App
 
 [![License: GPL-3.0](https://img.shields.io/badge/license-GPL3.0-blue.svg)](LICENSE.md)
 
