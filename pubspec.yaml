@@ -28,62 +28,55 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-  # animated_theme_switcher: ^1.0.6
-  # cached_network_image: null
+  animated_theme_switcher: 
+  cached_network_image:
   carousel_pro: ^1.0.0
-  # cupertino_stackview: ^1.0.4
-  data_connection_checker: ^0.3.4
+  cupertino_stackview: 
+  data_connection_checker: 
   # flutter_plugin_pdf_viewer: any
   font_awesome_flutter: ^9.0.0-nullsafety
   # get_it:
-  # google_sign_in: ^4.0.7
+  google_sign_in: 
   http: any
-  # intro_views_flutter: ^2.8.0
-  # modal_progress_hud: ^0.1.3
-  # palette_generator: ^0.2.0
+  intro_views_flutter: 
+  modal_progress_hud: 
+  palette_generator: 
   provider: ^5.0.0-nullsafety.5
   share: ^2.0.0-nullsafety.2
   # transformer_page_view: ^0.1.6
-  url_launcher: ^6.0.0-nullsafety.7
-  webview_flutter: ^2.0.0-nullsafety.5
+  url_launcher: 
+  webview_flutter: 
   animations: ^2.0.0-nullsafety.0
-#  wiredash: ^0.3.0
-  # launch_review: ^2.0.0
-  # path_provider: null
-  shared_preferences: ^2.0.0-nullsafety.1
+  wiredash: 
+  path_provider: null
+  shared_preferences: 
   # flutter_pdfview: ^1.0.0+6
-  # image_picker: any
-  # dio: any
-  # async: any
+  image_picker: any
+  dio: any
   # package_info: ^0.4.0+13
-  # auto_size_text: ^2.1.0
-  # device_preview: null
-  # cuid: ^0.1.2
-  # permission_handler: ^5.0.1+1
+  auto_size_text:
+  device_preview: 
+  cuid: 
+  permission_handler: 
   # flutter_typeahead: ^1.8.1
   # flutter_full_pdf_viewer: ^1.0.6
-  # stacked: ^1.6.0
-  # injectable: null
-  # logger: ^0.9.2
-  # flutter_mailer: ^0.5.1
-  # expansion_tile_card: ^1.0.3
-  # mime: null
-  # json_annotation: ^3.0.1
-  # delayed_display: ^1.0.3
-  # percent_indicator: ^2.1.1
-  # auto_route: null
-  # rxdart: null
-  # stacked_services: null
-  get: ^3.25.4
+  stacked: 
+  injectable: null
+  logger: 
+  flutter_mailer: 
+  expansion_tile_card:
+  mime: null
+  json_annotation: 
+  percent_indicator: 
+  auto_route: 
+  rxdart: null
+  stacked_services: null
+  get: 
   # avatar_glow: ^1.1.0
-  # simple_url_preview: null
-  # lottie: ^0.6.0
-  # file_picker: ^1.12.0
-  # connectivity: ^2.0.0
-  # retry: ^3.0.1
-  # preload_page_view: ^0.1.4
-  # in_app_review:
-#  youtube_player_flutter: ^7.0.0+7
+  simple_url_preview: null
+  lottie: 
+  file_picker: 
+  connectivity: 
 
 dev_dependencies:
   flutter_test:

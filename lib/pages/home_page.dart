@@ -1,11 +1,21 @@
+import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
+import 'package:share/share.dart';
 import 'package:tknp/anim/animated.dart';
 import 'package:tknp/pages/about.dart';
 import 'package:tknp/pages/auth/login_page.dart';
 import 'package:tknp/pages/courses/courses.dart';
 import 'package:tknp/pages/settings.dart';
+import 'package:tknp/pages/timetable/timetable.dart';
+import 'package:tknp/theme/theme.dart';
 import 'package:tknp/util/greetings.dart';
+import 'package:tknp/util/ui_helpers.dart';
+import 'package:tknp/util/utils.dart';
 import 'package:tknp/widgets/info.dart';
+import 'package:tknp/widgets/tknp_web.dart';
+import 'package:wiredash/wiredash.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -15,57 +25,67 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   var cColor = Color(0xfffdfdfd);
   final GlobalKey<ScaffoldState>? _scaffoldKey = GlobalKey();
-
+  final name = 'TKNP v.0.4-alpha';
+  late String uName;
+  @override
+  void initState() {
+    uName = Utils().name;
+    super.initState();
+  }
+  static DelayUI shareDelay = DelayUI(Duration(seconds: 1));
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       drawer: Drawer(
-        key: _scaffoldKey,
         child: ListView(
           children: [
             UserAccountsDrawerHeader(
-              accountName: Text(
-                "Kisumu National Polytechnic",
-                style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
-              ),
-              accountEmail: Text("kisumupoly.ac.ke"),
+              accountName: Text(''),
+              accountEmail: Text(""),
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage("assets/images/plogo.png"),
-                  matchTextDirection: true,
+                  image: AssetImage("assets/images/logo.png"),
                 ),
               ),
             ),
             ListTile(
-              onTap: () {},
-              leading: Icon(Icons.forward_to_inbox),
+              onTap: () {
+                Wiredash.of(context)!.setBuildProperties(buildVersion: name);
+                Wiredash.of(context)!.show();
+              },
+              leading: FaIcon(FontAwesomeIcons.commentDots),
               title: Text("Leave feedback"),
             ),
             ListTile(
-              onTap: () {},
-              leading: Icon(Icons.share),
+              onTap: () =>
+                shareDelay.run(() => Share.share('Hey! checkout Kisumupoly App',subject: 'Get it from: https://github.com/kherld-hussein/tknp/releases/')),
+              leading: FaIcon(FontAwesomeIcons.shareAlt),
               title: Text("Share"),
             ),
             ListTile(
               onTap: () {
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) => Settings()));
+                _close();
+                Get.to(Settings());
               },
-              leading: Icon(Icons.settings),
+              leading: FaIcon(FontAwesomeIcons.cog),
               title: Text("Settings"),
             ),
-            Divider(),
+            Divider(height: 64, thickness: 1),
             ListTile(
-              leading: Icon(Icons.live_help),
-              title: Text("Help"),
-              onTap: () => Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => Information())),
-            ),
+                leading: FaIcon(Icons.live_help),
+                title: Text("Help"),
+                onTap: () {
+                  _close();
+                  Get.to(Information());
+                }),
             ListTile(
-              leading: Icon(Icons.info_sharp),
+              leading: FaIcon(FontAwesomeIcons.infoCircle),
               title: Text("About"),
-              onTap: () => Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => AboutView())),
+              onTap: () {
+                _close();
+                Get.to(AboutView());
+              },
             ),
           ],
         ),
@@ -73,66 +93,31 @@ class _HomePageState extends State<HomePage> {
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
-            backgroundColor: cColor,
             iconTheme: IconThemeData(color: Colors.black),
-            // leading: Padding(
-            //   padding: const EdgeInsets.only(left: 10),
-            //   child: InkWell(
-            //     child: ImageIcon(
-            //       AssetImage('assets/images/drawer.png'),
-            //       key: _scaffoldKey,
-            //       size: 10,
-            //       color: Colors.black,
-            //     ),
-            //     onTap: () => _scaffoldKey!.currentState!.openDrawer(),
-            //   ),
-            // ),
             elevation: 0.0,
             expandedHeight: 200,
             centerTitle: true,
             flexibleSpace: FlexibleSpaceBar(
               collapseMode: CollapseMode.parallax,
-              background: Container(
-                decoration: BoxDecoration(
-                  color: Color(0xFFFAFAFC).withOpacity(0.2),
-                  border: Border.all(color: Color(0xFFFAFAFC).withOpacity(0.2)),
-                  // borderRadius: BorderRadius.circular(10),
-                  image: DecorationImage(
-                    matchTextDirection: true,
-                    fit: BoxFit.cover,
-                    image: AssetImage('assets/images/learn.jpg'),
-                    colorFilter: ColorFilter.mode(
-                      Theme.of(context).backgroundColor.withOpacity(0.4),
-                      BlendMode.dstATop,
-                    ),
-                  ),
-                ),
+              background: Carousel(
+                images: [
+                  Image.asset("assets/images/learn.jpg", fit: BoxFit.fill),
+                  Image.asset("assets/images/slide2.jpg", fit: BoxFit.fill),
+                  Image.asset('assets/images/slide1.jpg', fit: BoxFit.fill),
+                  Image.asset("assets/images/learn.jpg", fit: BoxFit.fill),
+                ],
+                animationCurve: Curves.easeIn,
+                dotIncreasedColor: kDarkSecondaryColor,
+                dotColor: kLightPrimaryColor,
+                dotSize: 5.0,
               ),
-              // background: Carousel(
-              //   images: [
-              //     Lottie.asset('assets/lottie/class.json',
-              //         repeat: true, fit: BoxFit.fill),
-              //     Lottie.asset('assets/lottie/learn.json',
-              //         repeat: true, fit: BoxFit.fill),
-              //     Lottie.asset('assets/lottie/back.json',
-              //         fit: BoxFit.fill, repeat: true),
-              //     Lottie.asset('assets/lottie/ready-to-learn.json',
-              //         fit: BoxFit.fill, repeat: true),
-              //     Image.asset("assets/images/learn.jpg", fit: BoxFit.fill),
-              //     Image.asset("assets/images/haul.jpg", fit: BoxFit.fill),
-              //     Image.asset("assets/images/learn.jpg", fit: BoxFit.fill),
-              //     // Image.asset("assets/images/learn.jpg", fit: BoxFit.fill),
-              //   ],
-              //   animationCurve: Curves.easeIn,
-              //   dotIncreasedColor: kDarkSecondaryColor,
-              //   dotColor: kLightPrimaryColor,
-              //   dotSize: 5.0,
-              // ),
             ),
-            // backgroundColor: kDarkPrimaryColor,
-            // elevation: 0.w,
+            leading: IconButton(
+              icon: Image.asset('assets/images/drawer.png', scale: 5),
+              iconSize: 10,
+              onPressed: _scaffoldKey!.currentState!.openDrawer,
+            ),
             floating: true,
-            // expandedHeight: 0.26.hp,
             pinned: true,
           ),
           SliverFillRemaining(
@@ -145,14 +130,13 @@ class _HomePageState extends State<HomePage> {
               ),
               SizedBox(height: 10),
               Container(
-                // color: cColor,
                 child: ListView(
                   padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                   children: [
                     Padding(
                       padding: EdgeInsets.all(8),
                       child: Text(
-                        '${Greetings().greet()}',
+                        'Good $dayGreeting $uName',
                         style: TextStyle(
                             color: Colors.black,
                             fontSize: 25,
@@ -173,81 +157,81 @@ class _HomePageState extends State<HomePage> {
                       icon: Icons.library_books,
                       color: Color(0xb4eaa705),
                       text: 'COURSES',
-                      onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => TknpCourses()));
-                      },
+                      onTap: () => Get.to(() => TknpCourses()),
                     ),
                     SizedBox(height: 20),
                     DisplayButton(
-                      icon: Icons.school,
+                      icon: FontAwesomeIcons.graduationCap,
                       color: Color(0xffeff0f2),
                       text: 'PORTAL',
                       onTap: () {
-                        // Navigator.of(context).push(MaterialPageRoute(
-                        //     builder: (context) => StudentPortal()));
+
                       },
                     ),
                     SizedBox(height: 20),
                     DisplayButton(
-                      icon: Icons.important_devices_sharp,
+                      icon: FontAwesomeIcons.connectdevelop,
                       color: Color(0xfff99562),
                       text: 'EVENTS',
-                      onTap: () {
-                        // Navigator.of(context).push(MaterialPageRoute(
-                        //     builder: (context) => StudentPortal()));
-                      },
+                        onTap: () => Get.to(() => WebGeneration2(
+                            'https://kisumupoly.ac.ke/news', 'News & Events')),
                     ),
                     SizedBox(height: 20),
                     DisplayButton(
-                      icon: Icons.computer_sharp,
+                      icon: FontAwesomeIcons.laptopHouse,
                       color: Color(0xff01ab68),
                       text: 'E-LEARN',
-                      onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => LoginPage()));
-                      },
+                      onTap: () => Get.to(() => LearningPage()),
                     ),
                     SizedBox(height: 20),
                     DisplayButton(
-                      icon: Icons.calendar_today_outlined,
+                      icon: FontAwesomeIcons.book,
+                      color: Color(0xffeff0f2),
+                      text: 'LIBRARY',
+                      onTap: () => Get.to(
+                            () => WebGeneration2(
+                            'https://kisumupoly.ac.ke/index.php/library-resources',
+                            'LIBRARY'),
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    DisplayButton(
+                      icon: FontAwesomeIcons.calendarAlt,
                       color: Color(0xff1c6d83),
                       text: 'CALENDAR',
-                      onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => LoginPage()));
-                      },
+                      onTap: () => Get.to(() => LoginPage()),
                     ),
                     SizedBox(height: 20),
                     DisplayButton(
-                      icon: Icons.calendar_today,
+                      icon: FontAwesomeIcons.calendar,
                       color: Color(0xff00012d),
                       text: 'TIMETABLE',
-                      onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => LoginPage()));
-                      },
+                      onTap: () => Get.to(() => Timetable()),
                     ),
                     SizedBox(height: 20),
                     DisplayButton(
-                      icon: Icons.download_outlined,
+                      icon: FontAwesomeIcons.fileDownload,
                       color: Color(0x455f03c7),
                       text: 'DOWNLOADS',
-                      onTap: () {},
+                      onTap: () => Get.to(() => WebGeneration2(
+                          'https://kisumupoly.ac.ke/student-downloads',
+                          'Student Downloads')),
                     ),
                     SizedBox(height: 20),
                     DisplayButton(
-                      icon: Icons.home_work_outlined,
+                      icon: FontAwesomeIcons.school,
                       color: Color(0xff21000a),
                       text: 'HOSTELS',
-                      onTap: () {},
+                      onTap: () => Get.to(() => WebGeneration2(
+                          'https://kisumupoly.ac.ke/under-construction', '')),
                     ),
                     SizedBox(height: 20),
                     DisplayButton(
-                      icon: Icons.explore,
+                      icon: FontAwesomeIcons.internetExplorer,
                       color: Color(0xffc609a2),
                       text: 'WEB PAGE',
-                      onTap: () {},
+                      onTap: () => Get.to(
+                              () => WebGeneration2('https://kisumupoly.ac.ke', '')),
                     ),
                   ],
                 ),
@@ -258,6 +242,7 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+  void _close() => Get.back();
 }
 
 class DisplayButton extends StatelessWidget {
@@ -298,7 +283,7 @@ class DisplayButton extends StatelessWidget {
                       child: Column(
                         children: [
                           IconButton(
-                              icon: Icon(icon, color: color), onPressed: () {}),
+                              icon: Icon(icon, color: color), onPressed: ()=> onTap),
                         ],
                       ),
                     ),

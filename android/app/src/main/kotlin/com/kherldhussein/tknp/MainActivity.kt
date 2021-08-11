@@ -1,4 +1,4 @@
-package com.example.tknp
+package com.kherldhussein.tknp
 
 import io.flutter.embedding.android.FlutterActivity
 
