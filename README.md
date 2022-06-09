@@ -68,7 +68,7 @@ Google Flutter SDK
 Since this is an unofficial App it unfortunately cannot be released in the App Store or Google Play.<br>
 To use this Application on Android phones you can download the latest prebuilt apk.
 
-> Download The Offial App [Here](https://github.com/kherld-hussein/tknp/releases/)
+> Download The Latest Version On Github [Here](https://github.com/kherld-hussein/tknp/releases/)
 
 
 ## Currently implemented features:
