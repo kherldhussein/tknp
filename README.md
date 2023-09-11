@@ -11,11 +11,11 @@
 
 The TKNP app provides convenient access to important information and personalized services in the palm of your hand. It was designed to run smoothly & easily to facilitate
 e-learning, which has become an essential system in education. This app comes with the most services that
-the student needs during his study period. Looking forward on adding new services that is in the interest of the student in particular.
+the student needs during his study period. I look forward to adding new services that are in the interest of the student in particular.
 
 ## Screenshots
 
-The Data shown is not correct and just there for demonstration purposes.
+The Data shown is not correct and is just there for demonstration purposes.
 
 ### Dark mode
 
@@ -61,18 +61,18 @@ Google Flutter SDK
 * [Flutter SDK](https://flutter.dev)
 * [Android SDK & Android Studio](https://developer.android.com/studio) for deployment to Android
 * [XCode IDE](https://developer.apple.com/xcode/) for deployment to iOS/iPad/MacOS
-* [VS Code IDE](https://code.visualstudio.com/) optional
+* [VS Code IDE](https://code.visualstudio.com/) Optional
 
 
 ## Installation
 Since this is an unofficial App it unfortunately cannot be released in the App Store or Google Play.<br>
-To use this Application on Android phones you can download the latest prebuilt apk.
+To use this Application on Android phones you can download the latest prebuilt app.
 
 > Download The Latest Version On Github [Here](https://github.com/kherld-hussein/tknp/releases/)
 
 
 ## Currently implemented features:
-Kisumupoly students and not stuff can get:
+Kisumupoly students and not staff can get:
 * Easy access to dynamic, real-time information and frequently accessed services
 * E-learning Resources
 * Smart Notes Widget
@@ -81,11 +81,11 @@ Kisumupoly students and not stuff can get:
 
 ## RoadMap & ToDo:
 | Chatting Platform for each department
-* Students can interact with each other and have an option to anonymously rant thus relieving possible anxiety, stress and nervousness.
+* Students can interact with each other and have an option to anonymously rant thus relieving possible anxiety, stress, and nervousness.
 
 | Lecturer's Platform
-* Lecturers to interact with there student.
-* Share contents and learning resources.
+* Lecturers to interact with their students.
+* Share content and learning resources.
 
 | TimeTable
 * Display customizable student calendar integration.
